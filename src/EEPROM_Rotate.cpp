@@ -98,7 +98,7 @@ uint8_t EEPROM_Rotate::size() {
  * @returns {uint8_t}           Number of sectors
  */
 uint8_t EEPROM_Rotate::reserved() {
-    uint32_t fs_end = (uint32_t)&_SPIFFS_end - 0x40200000;
+    uint32_t fs_end = (uint32_t)&_FS_end - 0x40200000;
     uint8_t sectors = (ESP.getFlashChipSize() - fs_end) / SPI_FLASH_SEC_SIZE - 4;
     return sectors;
 }

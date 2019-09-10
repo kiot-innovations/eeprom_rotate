@@ -11,8 +11,8 @@ EEPROM_Rotate EEPROMr;
 // INFO
 // -----------------------------------------------------------------------------
 
-extern "C" uint32_t _SPIFFS_start;
-extern "C" uint32_t _SPIFFS_end;
+extern "C" uint32_t _FS_start;
+extern "C" uint32_t _FS_end;
 
 unsigned int info_bytes2sectors(size_t size) {
     return (int) (size + SPI_FLASH_SEC_SIZE - 1) / SPI_FLASH_SEC_SIZE;
@@ -23,7 +23,7 @@ unsigned long info_ota_space() {
 }
 
 unsigned long info_filesystem_space() {
-    return ((uint32_t)&_SPIFFS_end - (uint32_t)&_SPIFFS_start);
+    return ((uint32_t)&_FS_end - (uint32_t)&_FS_start);
 }
 
 unsigned long info_eeprom_space() {

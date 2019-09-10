@@ -1,6 +1,6 @@
 /*
 
-EEPROM Rotate 0.9.1
+EEPROM Rotate 0.9.2
 
 EEPROM wrapper for ESP8266
 
@@ -252,8 +252,10 @@ void EEPROM_Rotate::begin(size_t size) {
         } else {
 
             // This new sector is newer if...
+
             bool newer = ((value < best_value) && (best_value - value) > 128) ||
                          ((value > best_value) && (value - best_value) < 128);
+
 
             if (newer) {
                 best_index = index;

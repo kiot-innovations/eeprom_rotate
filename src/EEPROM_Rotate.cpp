@@ -28,7 +28,7 @@ extern "C" {
     #include "spi_flash.h"
 }
 
-extern "C" uint32_t _SPIFFS_end;
+extern "C" uint32_t _FS_end;
 
 // -----------------------------------------------------------------------------
 // PUBLIC *NEW* METHODS
